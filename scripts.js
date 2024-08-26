@@ -1,8 +1,8 @@
 // scripts.js
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var loginForm = document.getElementById("loginForm");
     if (loginForm) {
-        loginForm.addEventListener("submit", function(event) {
+        loginForm.addEventListener("submit", function (event) {
             event.preventDefault();
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var registroForm = document.getElementById("registroForm");
     if (registroForm) {
-        registroForm.addEventListener("submit", function(event) {
+        registroForm.addEventListener("submit", function (event) {
             event.preventDefault();
             var newUser = document.getElementById("newUser").value;
             var newPassword = document.getElementById("newPassword").value;
@@ -28,3 +28,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+var linkEstudiantes = document.getElementById("linkEstudiantes");
+var linkAsignaturas = document.getElementById("linkAsignaturas");
+var contenedorEstudiantes = document.getElementById("contenedorEstudiantes");
+var contenedorAsignaturas = document.getElementById("contenedorAsignaturas");
+
+linkEstudiantes.addEventListener("click", function (event) {
+    event.preventDefault();
+    contenedorEstudiantes.classList.add("active");
+    contenedorAsignaturas.classList.remove("active");
+});
+
+linkAsignaturas.addEventListener("click", function (event) {
+    event.preventDefault();
+    contenedorEstudiantes.classList.remove("active");
+    contenedorAsignaturas.classList.add("active");
+});
+
